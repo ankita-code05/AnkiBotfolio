@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Experience from './components/Experience';
 import Bot from './components/Bot'
-import Services from './components/services'
+import Services from './components/Services'
 
 
  

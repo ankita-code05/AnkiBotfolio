@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Services.css";
 
-const services = [
+const service = [
   {
     title: "Frontend Development",
     description: "Building fast, responsive, and accessible web apps using React, JavaScript, and modern UI frameworks.",
@@ -22,7 +22,7 @@ const Services = () => {
       <div className="services-container">
         <h2 className="services-title">Services</h2>
         <div className="services-grid">
-          {services.map((service, index) => (
+          {service.map((service, index) => (
             <div className="service-card" key={index}>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
