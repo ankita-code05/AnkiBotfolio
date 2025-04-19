@@ -1,8 +1,9 @@
+// src/components/Bot.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import { getChatbotResponse } from '../chatbotService';
-import persona from '../Persona';  // Import persona data
+import persona from '../Persona';
 import '../styles/Bot.css';
-import { TbMessageChatbotFilled } from "react-icons/tb";
+import { TbMessageChatbotFilled } from 'react-icons/tb';
 
 const Bot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,30 +32,36 @@ const Bot = () => {
       { from: 'user', text: userInput },
     ]);
 
-    // Check for greeting
-    let botResponse = persona.defaultResponse;
-    if (["hi", "hello", "hey"].includes(lowerInput)) {
+    // Predefined bot responses
+    let botResponse = null;
+    if (['hi', 'hello', 'hey'].includes(lowerInput)) {
       botResponse = "Hey there! 👋 I'm AnkiBot, your smart assistant. How can I help you today?";
     } else if (lowerInput.includes('skills')) {
-      botResponse = `I know these skills: ${persona.skills.join(", ")}.`;
+      botResponse = `I know these skills: ${persona.skills.join(', ')}.`;
     } else if (lowerInput.includes('education')) {
       botResponse = persona.education;
     } else if (lowerInput.includes('projects')) {
-      botResponse = `Some of my projects include: ${persona.projects.join(", ")}.`;
+      botResponse = `Some of my projects include: ${persona.projects.join(', ')}.`;
     } else if (lowerInput.includes('values')) {
-      botResponse = `My core values are: ${persona.values.join(", ")}.`;
+      botResponse = `My core values are: ${persona.values.join(', ')}.`;
     } else if (lowerInput.includes('experience')) {
       botResponse = persona.experience;
     }
 
-    setIsTyping(true);
-    const response = await getChatbotResponse(userInput);
-    setIsTyping(false);
-
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { from: 'bot', text: response[0]?.generated_text || botResponse },
-    ]);
+    if (botResponse) {
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { from: 'bot', text: botResponse },
+      ]);
+    } else {
+      setIsTyping(true);
+      const response = await getChatbotResponse(userInput);
+      setIsTyping(false);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { from: 'bot', text: response },
+      ]);
+    }
 
     setUserInput('');
   };
@@ -72,12 +79,14 @@ const Bot = () => {
   return (
     <div>
       <button onClick={toggleChatbox} className="chatbot-button">
-        {isOpen ? 'Close Chat' :  <TbMessageChatbotFilled size={24} />}
+        {isOpen ? 'Close Chat' : <TbMessageChatbotFilled size={24} />}
       </button>
 
       <div className={`chatbox ${isOpen ? 'open' : 'closed'}`}>
         <div className="chatbox-header">
-          <h3>AnkiBot <TbMessageChatbotFilled  size={24}/></h3>
+          <h3>
+            AnkiBot <TbMessageChatbotFilled size={24} />
+          </h3>
           <button onClick={toggleChatbox}>X</button>
         </div>
         <div className="chatbox-body" ref={chatboxBodyRef}>
