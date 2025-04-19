@@ -1,0 +1,22 @@
+/* App.css - Suggested Fix */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+    color: #e0e0e0;
+    overflow-x: hidden;
+  }
+  
+  .main-content {
+    padding: 2rem;
+  }
+  
+  .section {
+    margin-bottom: 4rem;
+  }
+  

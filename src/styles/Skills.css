@@ -1,0 +1,106 @@
+/* Skills.css */
+
+/* Section Styling */
+.skills-section {
+  width: 100vw;
+  background: linear-gradient(to right, #1a1a1a, #121212);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  animation: fadeInSkillsSection 1.2s ease-in;
+}
+
+/* Container */
+.skills-container {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+  animation: slideUpFadeSkills 1s ease forwards;
+}
+
+/* Section Title */
+.skills-title {
+  font-size: 2.5rem;
+  color: #f2aa4c;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  opacity: 0;
+  animation: fadeInSkillsTitle 1s ease 0.3s forwards;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* Skill Card */
+.skill-card {
+  background: #203a43; 
+  border-radius: 16px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInSkillCard 0.6s ease forwards;
+}
+
+/* Apply delay for each card using nth-child */
+.skill-card:nth-child(1) { animation-delay: 0.2s; }
+.skill-card:nth-child(2) { animation-delay: 0.3s; }
+.skill-card:nth-child(3) { animation-delay: 0.4s; }
+.skill-card:nth-child(4) { animation-delay: 0.5s; }
+.skill-card:nth-child(5) { animation-delay: 0.6s; }
+.skill-card:nth-child(6) { animation-delay: 0.7s; }
+/* Add more if needed */
+
+/* Hover Effect */
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px #f2aa4c;
+}
+
+/* Skill Icon */
+.skill-icon-svg {
+  width: 60px;
+  height: 60px;
+  fill: white; /* Apply color if needed */
+  margin-bottom: 0.8rem;
+  transition: fill 0.3s ease;
+}
+
+/* Skill Name */
+.skill-name {
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeInSkillsSection {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInSkillsTitle {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUpFadeSkills {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInSkillCard {
+  to { opacity: 1; transform: translateY(0); }
+}
