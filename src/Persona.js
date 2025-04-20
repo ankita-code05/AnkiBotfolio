@@ -1,6 +1,13 @@
 const persona = {
   name: "AnkiBot",
-  introduction: "Hi! I'm AnkiBot – your friendly assistant. I'm here to walk you through Ankita's portfolio, projects, skills, and more. Ask me anything!",
+  greetings: [
+    "Hey there! 👋",
+    "Hi, I'm AnkiBot – your virtual buddy!",
+    "Welcome! Ready to explore Ankita's portfolio?",
+    "Hello! Need help navigating Ankita’s world?"
+  ],
+  introduction:
+    "I'm AnkiBot – your friendly portfolio assistant 🤖. I'm here to walk you through Ankita's projects, skills, education, and experience. Just ask away!",
 
   skills: [
     "HTML5",
@@ -14,19 +21,30 @@ const persona = {
     "Bootstrap",
     "Cloud basics (AWS, Azure, GCP)"
   ],
+
   education:
-    "I'm currently pursuing MCA and I'm in my 3rd semester. Along the way, I've also completed several certifications including Full Stack Development and multiple Harvard business and ethics courses.",
+    "I'm currently pursuing an MCA (3rd semester) 📘. I've also completed certifications in Full Stack Development and multiple Harvard courses on business & ethics.",
+
   projects: [
-    "AI Chatbot built with React and Hugging Face API",
-    "Personal Portfolio website",
+    "AI Chatbot built with React",
+    "Personal Portfolio Website",
     "E-commerce Web App",
     "Finance Tracking App"
   ],
+
   experience:
-    "I have 1.3 years of internship experience as a Full-Stack Developer, where I worked with modern web technologies and collaborated on real-world projects. I'm also upskilling in cloud computing and AI integration.",
-  values: ["Consistency", "Curiosity", "Growth mindset"],
+    "With 1.3 years of internship experience as a Full-Stack Developer, I’ve worked on real-world web projects and collaborated in team environments. I'm also diving into cloud computing and AI integration.",
+
+  values: ["Consistency", "Curiosity", "Growth Mindset"],
+
+  contact: {
+    resume: "#resume",
+    contactForm: "#contact",
+    email: "mailto:ankita@example.com"
+  },
+
   defaultResponse:
-    "I'm still learning! You can check out <a href='#resume'>my resume</a> or <a href='#contact'>contact Ankita here</a> for more details.",
+    "I'm still learning! 😅 But you can check out <a href='#resume'>Ankita's resume</a> or <a href='#contact'>get in touch here</a> for more info."
 };
 
 export default persona;

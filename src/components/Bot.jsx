@@ -1,6 +1,5 @@
 // src/components/Bot.jsx
 import React, { useState, useEffect, useRef } from 'react';
-import { getChatbotResponse } from '../chatbotService';
 import persona from '../Persona';
 import '../styles/Bot.css';
 import { TbMessageChatbotFilled } from 'react-icons/tb';
@@ -8,7 +7,12 @@ import { TbMessageChatbotFilled } from 'react-icons/tb';
 const Bot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { from: 'bot', text: persona.introduction },
+    {
+      from: 'bot',
+      text: persona.greetings[
+        Math.floor(Math.random() * persona.greetings.length)
+      ] + ` ${persona.introduction}`,
+    },
   ]);
   const [userInput, setUserInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -22,47 +26,44 @@ const Bot = () => {
     setUserInput(e.target.value);
   };
 
-  const handleSendMessage = async () => {
+  const handleSendMessage = () => {
     if (!userInput.trim()) return;
 
     const lowerInput = userInput.toLowerCase().trim();
 
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { from: 'user', text: userInput },
-    ]);
+    setMessages((prev) => [...prev, { from: 'user', text: userInput }]);
 
-    // Predefined bot responses
-    let botResponse = null;
+    let botResponse = '';
+
     if (['hi', 'hello', 'hey'].includes(lowerInput)) {
-      botResponse = "Hey there! 👋 I'm AnkiBot, your smart assistant. How can I help you today?";
+      botResponse =
+        persona.greetings[
+          Math.floor(Math.random() * persona.greetings.length)
+        ];
     } else if (lowerInput.includes('skills')) {
-      botResponse = `I know these skills: ${persona.skills.join(', ')}.`;
+      botResponse = `Here are some of my skills: <br />${persona.skills.join(', ')}.`;
     } else if (lowerInput.includes('education')) {
       botResponse = persona.education;
     } else if (lowerInput.includes('projects')) {
-      botResponse = `Some of my projects include: ${persona.projects.join(', ')}.`;
-    } else if (lowerInput.includes('values')) {
-      botResponse = `My core values are: ${persona.values.join(', ')}.`;
+      botResponse = `Some of my projects include: <br />${persona.projects.join(', ')}.`;
     } else if (lowerInput.includes('experience')) {
       botResponse = persona.experience;
-    }
-
-    if (botResponse) {
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { from: 'bot', text: botResponse },
-      ]);
+    } else if (lowerInput.includes('values')) {
+      botResponse = `Core values that I live by: ${persona.values.join(', ')}.`;
+    } else if (lowerInput.includes('resume')) {
+      botResponse = `Sure! You can view it <a href="${persona.contact.resume}">here</a>.`;
+    } else if (lowerInput.includes('contact')) {
+      botResponse = `You can reach out via <a href="${persona.contact.contactForm}">this form</a> or drop an email at <a href="${persona.contact.email}">Ankita</a>.`;
     } else {
-      setIsTyping(true);
-      const response = await getChatbotResponse(userInput);
-      setIsTyping(false);
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { from: 'bot', text: response },
-      ]);
+      botResponse = persona.defaultResponse;
     }
 
+    setTimeout(() => {
+      setMessages((prev) => [...prev, { from: 'bot', text: botResponse }]);
+      setIsTyping(false);
+    }, 500);
+
+    setIsTyping(true);
     setUserInput('');
   };
 
