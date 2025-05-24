@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Header.css";
 import { CgArrowDownO } from "react-icons/cg";
 
+
 const Header = () => {
   return (
     <header className="header">
@@ -14,7 +15,7 @@ const Header = () => {
             <li className="nav-item"><a href="#about" className="nav-link">About</a></li>
             <li className="nav-item"><a href="#contact" className="nav-link">Contact</a></li>
             <li className="nav-item resume-item">
-              <a href="#resume" className="nav-link resume-link">
+              <a href="/Ankita_Tiwari_Resume(Front-end).pdf" download className="nav-link resume-link" >
                 <CgArrowDownO size={24} />
                 <span className="resume-text">Download Resume</span>
               </a>

@@ -11,11 +11,32 @@ const Experience = () => {
           <div className="timeline-item">
             <div className="timeline-dot" />
             <div className="timeline-content">
-              <h3 className="role">Frontend Developer Intern</h3>
-              <span className="company">XYZ Technologies</span>
-              <span className="date">Jan 2023 – Jun 2024</span>
+              <h3 className="role">Chegg Expert</h3>
+              <span className="company">Chegg India</span>
+              <span className="date">Mar. 2023 – Nov. 2023</span>
               <p>
-                Built interactive UIs with React.js and improved component reusability. Collaborated with designers to maintain consistent visual language.
+                Worked as a Subject Matter Expert at Chegg, assisting students
+                by solving their academic queries in computer science,
+                showcasing strong problem-solving, communication, and mentoring
+                abilities.
+              </p>
+            </div>
+          </div>
+          <div className="timeline-item">
+            <div className="timeline-dot" />
+            <div className="timeline-content">
+              <h3 className="role">Full-Stack Developer Trainee</h3>
+              <span className="company">The 10x Academy</span>
+              <span className="date">sept. 2022 – sept. 2023</span>
+              <p>
+                Completed a Full Stack Bootcamp at 10x Academy, mastering HTML,
+                CSS, JavaScript, React.js, Node.js, Express.js, MongoDB, and
+                Git. Built and deployed MERN stack applications with features
+                like post uploads, deletions, and full survey management
+                (create, edit, delete, preview, theme customization).
+                Implemented secure user authentication using bcrypt and JWT.
+                Gained hands-on experience through real-world projects,
+                showcasing technical proficiency and collaboration. 
               </p>
             </div>
           </div>
@@ -23,11 +44,17 @@ const Experience = () => {
           <div className="timeline-item">
             <div className="timeline-dot" />
             <div className="timeline-content">
-              <h3 className="role">Freelance Web Developer</h3>
-              <span className="company">Self-Employed</span>
-              <span className="date">Jul 2024 – Present</span>
+              <h3 className="role">Web Designer Intern</h3>
+              <span className="company">Dessa IT Snergy</span>
+              <span className="date">Oct. 2021 – Dec. 2021</span>
               <p>
-                Delivered personal and commercial websites with smooth animations, responsive layouts, and SEO optimization.
+                Demonstrated mastery in HTML, CSS, and JavaScript during a
+                dynamic 3-month web design internship. Implemented responsive
+                designs, ensuring optimal user experiences—an ideal foundation
+                for a front-end developer role. Collaborative Team Player:
+                Actively contributed to team projects, fostering effective
+                communication and integrating feedback to achieve seamless
+                project outcomes.
               </p>
             </div>
           </div>

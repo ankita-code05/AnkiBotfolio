@@ -2,32 +2,32 @@ import React from "react";
 import "../styles/Projects.css";
 
 // Import project images (if any)
-import project1Image from "../assets/design.jpg";  // Replace with actual paths
-import project2Image from "../assets/mern4.png";  // Replace with actual paths
-import project3Image from "../assets/design.jpg";  // Replace with actual paths
+import portfolio from "../assets/portfolio.png";  // Replace with actual paths
+import organic from "../assets/organic.png";  // Replace with actual paths
+//import project3Image from "../assets/design.jpg";  // Replace with actual paths
 
 const projects = [
   {
     title: "Project 1",
-    description: "A short description of Project 1.",
-    image: project1Image,
-    githubLink: "https://github.com/ankita-code05/project1",
-    liveLink: "https://project1.com"
+    description: "Portfolio",
+    image: portfolio,
+    githubLink: "https://github.com/ankita-code05/AnkiBotfolio",
+    liveLink: "https://ankibotfolio.onrender.com/"
   },
   {
     title: "Project 2",
-    description: "A short description of Project 2.",
-    image: project2Image,
-    githubLink: "https://github.com/ankita-code05/project2",
-    liveLink: "https://project2.com"
+    description: "E-commerce web App",
+    image: organic,
+    githubLink: "https://github.com/ankita-code05/Organic-store",
+    //liveLink: "https://project2.com"
   },
-  {
-    title: "Project 3",
-    description: "A short description of Project 3.",
-    image: project3Image,
-    githubLink: "https://github.com/ankita-code05/project3",
-    liveLink: "https://project3.com"
-  }
+  // {
+  //   title: "Project 3",
+  //   description: "A short description of Project 3.",
+  //   image: project3Image,
+  //   githubLink: "https://github.com/ankita-code05/project3",
+  //   liveLink: "https://project3.com"
+  // }
 ];
 
 const Projects = () => {

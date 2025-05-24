@@ -4,13 +4,16 @@ import "../styles/Certificates.css";
 
 // Replace with your actual certificate images
 import cert1 from "../assets/cert1.png";
-// import cert2 from "../assets/cert2.png";
-// import cert3 from "../assets/cert3.png";
+import cert2 from "../assets/GenAI.png";
+import cert3 from "../assets/accenture.png";
 
 const certificates = [
-  { title: "Harvard CS50", image: cert1 },
-  { title: "AWS Cloud Practitioner", image: cert1 },
-  { title: "Frontend Mentor Challenges", image: cert1}
+  { title: "Career essentials in Generative AI by Microsoft & LinkedIn", image: cert1 },
+  { title: "Generative AI with OpenAI", image: cert2 },
+  { title: "Developer Virtual Experience Program", image: cert3},
+  
+
+
 ];
 
 const Certificates = () => {
